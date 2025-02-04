@@ -46,6 +46,21 @@ class Program
 
     static async Task Main()
     {
-        await GetWeather(Console.ReadLine());
+        
+        bool run = true;
+        while (run) {
+            
+            Console.WriteLine("Ange en stad: eller avlsluta med 0 ");
+            string city = Console.ReadLine();
+            Console.Clear();
+            if (city == "0") {
+                run = false;
+            } else {
+                await GetWeather(city);
+            }
+            
+
+        }
     }
+        
 }
